@@ -17,5 +17,17 @@ namespace MvcTicariOtomasyon.Controllers
 
             return View(degerler);
         }
+        [HttpGet]
+        public ActionResult KategoriEkle()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult KategoriEkle(Kategori k)
+        {
+            c.Kategoris.Add(k);
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
