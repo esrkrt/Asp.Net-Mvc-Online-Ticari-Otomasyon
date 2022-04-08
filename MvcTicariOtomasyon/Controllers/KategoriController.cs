@@ -29,5 +29,12 @@ namespace MvcTicariOtomasyon.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult KategoriSil(int id)
+        {
+            var ktg = c.Kategoris.Find(id);
+            c.Kategoris.Remove(ktg);
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
