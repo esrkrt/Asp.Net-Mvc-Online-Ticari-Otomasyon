@@ -13,7 +13,7 @@ namespace MvcTicariOtomasyon.Controllers
         Context c = new Context();
         public ActionResult Index()
         {
-            var departmanlar = c.Departmans.ToList();
+            var departmanlar = c.Departmans.Where(x => x.Durum == true).ToList();
             return View(departmanlar);
         }
         [HttpGet]
