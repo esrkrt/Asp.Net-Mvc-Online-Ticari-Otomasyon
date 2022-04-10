@@ -28,5 +28,12 @@ namespace MvcTicariOtomasyon.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult DepartmanSil(int id)
+        {
+            var dprtmn = c.Departmans.Find(id);
+            dprtmn.Durum = false;
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
