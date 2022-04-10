@@ -17,6 +17,7 @@
         <th>SATIŞ FİYATI</th>
         <th>KATEGORİ</th>
         <th>GÖRSEL</th>
+        <th>SİL</th>
 
 
     </tr>
@@ -31,6 +32,9 @@
             <td>@u.SatisFiyat</td>
             <td>@u.Kategori.KategoriAd</td>
             <td>@u.UrunGorsel</td>
+            <td>
+                <a href="/Urun/UrunSil/@u.UrunID" class="btn btn-danger">Sil</a>
+            </td>
         </tr>
     }
 

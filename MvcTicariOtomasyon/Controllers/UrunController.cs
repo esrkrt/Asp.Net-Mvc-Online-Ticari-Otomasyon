@@ -28,5 +28,12 @@ namespace MvcTicariOtomasyon.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult UrunSil(int id)
+        {
+            var urn = c.Uruns.Find(id);
+            urn.Durum = false;
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
