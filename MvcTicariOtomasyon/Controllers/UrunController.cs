@@ -16,5 +16,17 @@ namespace MvcTicariOtomasyon.Controllers
             var urunler = c.Uruns.ToList();
             return View(urunler);
         }
+        [HttpGet]
+        public ActionResult YeniUrun()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult YeniUrun(Urun p)
+        {
+            c.Uruns.Add(p);
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
