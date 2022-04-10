@@ -17,8 +17,7 @@
         <th>KATEGORİ</th>
         <th>GÖRSEL</th>
         <th>SİL</th>
-
-        @*<th>GÜNCELLE</th>*@
+        <th>GÜNCELLE</th>
 
     </tr>
     @foreach (var u in Model)
@@ -35,9 +34,9 @@
     <td>
         <a href="/Urun/UrunSil/@u.UrunID" class="btn btn-danger">Sil</a>
     </td>
-    @*<td>
+    <td>
         <a href="/Urun/UrunGetir/@u.UrunID" class="btn btn-success">Güncelle</a>
-    </td>*@
+    </td>
 </tr>
     }
 
