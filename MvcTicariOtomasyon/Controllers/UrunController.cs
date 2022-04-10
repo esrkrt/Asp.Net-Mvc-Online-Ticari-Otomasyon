@@ -19,6 +19,13 @@ namespace MvcTicariOtomasyon.Controllers
         [HttpGet]
         public ActionResult YeniUrun()
         {
+            List<SelectListItem> deger1 = (from x in c.Kategoris.ToList()
+                                                select new SelectListItem
+                                                {
+                                                    Text = x.KategoriAd,
+                                                    Value = x.KategoriID.ToString()
+                                                }).ToList();
+            ViewBag.dgr1 = deger1;
             return View();
         }
         [HttpPost]
