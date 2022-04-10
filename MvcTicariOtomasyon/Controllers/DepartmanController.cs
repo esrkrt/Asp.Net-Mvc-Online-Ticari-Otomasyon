@@ -16,5 +16,17 @@ namespace MvcTicariOtomasyon.Controllers
             var departmanlar = c.Departmans.ToList();
             return View(departmanlar);
         }
+        [HttpGet]
+        public ActionResult DepartmanEkle()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult DepartmanEkle(Departman d)
+        {
+            c.Departmans.Add(d);
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
