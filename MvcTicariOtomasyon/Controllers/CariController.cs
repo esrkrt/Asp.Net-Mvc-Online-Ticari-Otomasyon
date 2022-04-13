@@ -44,6 +44,11 @@ namespace MvcTicariOtomasyon.Controllers
         }
         public ActionResult CariGuncelle(Cariler p)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("CariGetir");
+
+            }
             var cari = c.Carilers.Find(p.Cariid);
 
             cari.CariAd = p.CariAd;
