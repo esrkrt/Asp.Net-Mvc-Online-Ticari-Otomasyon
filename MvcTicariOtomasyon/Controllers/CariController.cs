@@ -30,5 +30,13 @@ namespace MvcTicariOtomasyon.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult CariSil(int id)
+        {
+            var cari = c.Carilers.Find(id);
+            cari.Durum = false;
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
     }
 }
