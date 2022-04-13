@@ -60,5 +60,12 @@ namespace MvcTicariOtomasyon.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult PersonelSil(int id)
+        {
+            var personel = c.Personels.Find(id);
+            personel.Durum = false;
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

@@ -15,6 +15,7 @@
             <th>Soyadı</th>
             <th>Görsel</th>
             <th>Departman</th>
+            <th>Sil</th>
             <th>Güncelle</th>
             <th>Satışlar</th>
         </tr>
@@ -28,6 +29,9 @@
     <td>@m.PersonelSoyad</td>
     <td>@m.PersonelGorsel</td>
     <td>@m.Departman.DepartmaAd</td>
+    <td>
+        <a href="/Personel/PersonelSil/@m.PersonelID" class="btn btn-danger"><i class="fa fa-trash"></i> Sil</a>
+    </td>
     <td>
         <a href="/Personel/PersonelGetir/@m.PersonelID" class="btn btn-warning"><i class="fa fa-undo"></i> Güncelle</a>
     </td>
