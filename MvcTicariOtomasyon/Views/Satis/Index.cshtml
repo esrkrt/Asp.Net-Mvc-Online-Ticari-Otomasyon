@@ -24,23 +24,23 @@
     </thead>
     @foreach (var m in Model)
     {
-<tr>
+        <tr>
 
-    <td>@m.SatisID</td>
-    <td>@m.Cariler.CariAd @m.Cariler.CariSoyad</td>
-    <td>@m.Personel.PersonelAd @m.Personel.PersonelSoyad</td>
-    <td>@m.Urun.UrunAd</td>
-    <td>@m.Adet</td>
-    <td>@m.Fiyat</td>
-    <td>@m.ToplamTutar</td>
-    <td>@m.Tarih.ToShortDateString()</td>
-    <td>
-        <a href="/Satis/SatisGetir/@m.SatisID" class="btn btn-warning"><i class="fa fa-undo"></i> GÜNCELLE</a>
-    </td>
-        <td>
-        <a href="/Satis/SatisDetay/@m.SatisID" class="btn btn-default" style="background-color:burlywood"><i class="fa fa-info-circle"></i> Detay</a>
-    </td>
-</tr>
+            <td>@m.SatisID</td>
+            <td>@m.Cariler.CariAd @m.Cariler.CariSoyad</td>
+            <td>@m.Personel.PersonelAd @m.Personel.PersonelSoyad</td>
+            <td>@m.Urun.UrunAd</td>
+            <td>@m.Adet</td>
+            <td>@m.Fiyat</td>
+            <td>@m.ToplamTutar</td>
+            <td>@m.Tarih.ToShortDateString()</td>
+            <td>
+                <a href="/Satis/SatisGetir/@m.SatisID" class="btn btn-warning"><i class="fa fa-undo"></i> GÜNCELLE</a>
+            </td>
+            <td>
+                <a href="/Satis/SatisDetay/@m.SatisID" class="btn btn-default" style="background-color:burlywood"><i class="fa fa-info-circle"></i> Detay</a>
+            </td>
+        </tr>
 
     }
 
@@ -50,4 +50,19 @@
 <a href="/Satis/SatisEkle" class="btn btn-primary"><i class="fa fa-plus"></i>Yeni Satış Yap</a>
 <a href="/Satis/SatisListesi" class="btn btn-info"><i class="fa fa-print"></i> Yazdır</a>
 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+
+<script>
+
+$('#tbl1').dataTable({});
+
+</script>
 
