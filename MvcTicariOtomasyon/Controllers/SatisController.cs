@@ -93,5 +93,10 @@ namespace MvcTicariOtomasyon.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult SatisDetay(int id)
+        {
+            var satis = c.SatisHarekets.Where(x => x.SatisID == id).ToList();
+            return View(satis);
+        }
     }
 }

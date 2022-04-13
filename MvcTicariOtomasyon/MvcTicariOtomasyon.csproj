@@ -292,6 +292,7 @@
     <Content Include="Views\Satis\Index.cshtml" />
     <Content Include="Views\Satis\SatisEkle.cshtml" />
     <Content Include="Views\Satis\SatisGetir.cshtml" />
+    <Content Include="Views\Satis\SatisDetay.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
