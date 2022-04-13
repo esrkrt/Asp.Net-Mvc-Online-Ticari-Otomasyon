@@ -59,6 +59,14 @@ namespace MvcTicariOtomasyon.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult MüsteriSatis(int id)
+        {
+            var satislar = c.SatisHarekets.Where(x => x.CariID == id).ToList();
+            var cr = c.Carilers.Where(x => x.Cariid == id).Select(y => y.CariAd + " " + y.CariSoyad).FirstOrDefault();
+            ViewBag.cari = cr;
+
+            return View(satislar);
+        }
 
 
     }
