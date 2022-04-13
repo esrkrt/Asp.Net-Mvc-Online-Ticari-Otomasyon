@@ -529,6 +529,7 @@
     <Content Include="Views\Satis\SatisEkle.cshtml" />
     <Content Include="Views\Satis\SatisGetir.cshtml" />
     <Content Include="Views\Satis\SatisDetay.cshtml" />
+    <Content Include="Views\Urun\UrunListesi.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
