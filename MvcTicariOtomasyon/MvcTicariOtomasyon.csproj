@@ -291,6 +291,7 @@
     <Content Include="Views\Personel\PersonelGetir.cshtml" />
     <Content Include="Views\Satis\Index.cshtml" />
     <Content Include="Views\Satis\SatisEkle.cshtml" />
+    <Content Include="Views\Satis\SatisGetir.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
