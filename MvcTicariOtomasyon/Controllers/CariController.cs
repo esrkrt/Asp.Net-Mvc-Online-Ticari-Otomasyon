@@ -14,7 +14,7 @@ namespace MvcTicariOtomasyon.Controllers
 
         public ActionResult Index()
         {
-            var degerler = c.Carilers.ToList();
+            var degerler = c.Carilers.Where(x=>x.Durum==true).ToList();
             return View(degerler);
         }
         [HttpGet]
@@ -25,6 +25,7 @@ namespace MvcTicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult YeniCari(Cariler p)
         {
+            p.Durum = true;
             c.Carilers.Add(p);
             c.SaveChanges();
             return RedirectToAction("Index");
