@@ -535,6 +535,7 @@
     <Content Include="Views\Fatura\FaturaEkle.cshtml" />
     <Content Include="Views\Fatura\FaturaGetir.cshtml" />
     <Content Include="Views\Fatura\FaturaDetay.cshtml" />
+    <Content Include="Views\Fatura\FaturaKalemEkle.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

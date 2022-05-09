@@ -54,5 +54,17 @@ namespace MvcTicariOtomasyon.Controllers
             return View(kalemler);
 
         }
+        [HttpGet]
+        public ActionResult FaturaKalemEkle()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult FaturaKalemEkle(FaturaKalem f)
+        {
+            c.FaturaKalems.Add(f);
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
