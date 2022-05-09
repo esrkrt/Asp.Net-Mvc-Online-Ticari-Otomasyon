@@ -16,31 +16,31 @@
             <th>Tarih</th>
             <th>Vergi Dairesi</th>
             <th>Saat</th>
-            <th>Toplam</th>
             <th>Teslim Alan</th>
             <th>Teslim Eden</th>
+            <th>Toplam</th>
             <th>Güncelle</th>
             <th>İşlemler</th>
         </tr>
     </thead>
     @foreach (var m in Model)
     {
-        <tr>
+<tr>
 
-            <td>@m.Faturaid</td>
-            <td>@m.FaturaSeriNo</td>
-            <td>@m.FaturaSıraNo</td>
-            <td>@m.Tarih</td>
-            <td>@m.VergiDairesi</td>
-            <td>@m.Saat</td>
-            <td>100</td>
-            <td>@m.TeslimAlan</td>
-            <td>@m.TeslimEden</td>
-            
-            <td>
-                <a href="/Fatura/FaturaGetir/@m.Faturaid" class="btn btn-warning"><i class="fa fa-undo"></i> Güncelle</a>
-            </td>
-            <td>  <a href="/Fatura/FaturaDetay/@m.Faturaid" class="btn btn-info"><i class="fa fa-info"></i> Detaylar</a>
+    <td>@m.Faturaid</td>
+    <td>@m.FaturaSeriNo</td>
+    <td>@m.FaturaSıraNo</td>
+    <td>@m.Tarih</td>
+    <td>@m.VergiDairesi</td>
+    <td>@m.Saat</td>
+    <td>@m.TeslimAlan</td>
+    <td>@m.TeslimEden</td>
+    <td>@m.Toplam</td>
+
+    <td>
+        <a href="/Fatura/FaturaGetir/@m.Faturaid" class="btn btn-warning"><i class="fa fa-undo"></i> Güncelle</a>
+    </td>
+    <td>  <a href="/Fatura/FaturaDetay/@m.Faturaid" class="btn btn-info"><i class="fa fa-info"></i> Detaylar</a>
 
 </tr>
 
@@ -48,3 +48,5 @@
 </table>
 <br />
 <br />
+
+<a href="/Fatura/FaturaEkle" class="btn btn-primary"><i class="fa fa-plus"></i> Yeni Fatura Ekle</a>
