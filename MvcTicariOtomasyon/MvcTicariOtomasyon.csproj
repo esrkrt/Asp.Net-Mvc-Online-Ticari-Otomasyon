@@ -129,6 +129,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CariController.cs" />
     <Compile Include="Controllers\DepartmanController.cs" />
+    <Compile Include="Controllers\FaturaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KategoriController.cs" />
     <Compile Include="Controllers\PersonelController.cs" />
@@ -530,6 +531,7 @@
     <Content Include="Views\Satis\SatisGetir.cshtml" />
     <Content Include="Views\Satis\SatisDetay.cshtml" />
     <Content Include="Views\Urun\UrunListesi.cshtml" />
+    <Content Include="Views\Fatura\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
