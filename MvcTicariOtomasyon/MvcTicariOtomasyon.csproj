@@ -2843,6 +2843,7 @@
     <Content Include="Views\İstatistik\KolayTablolar.cshtml" />
     <Content Include="Views\İstatistik\Partial1.cshtml" />
     <Content Include="Views\İstatistik\Partial2.cshtml" />
+    <Content Include="Views\İstatistik\Partial3.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
