@@ -2866,6 +2866,7 @@
     <Content Include="weblogin\fonts\fontawesome-webfont.woff" />
     <Content Include="weblogin\fonts\fontawesome-webfont.woff2" />
     <Content Include="weblogin\fonts\FontAwesome.otf" />
+    <Content Include="Views\Login\Partial1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
