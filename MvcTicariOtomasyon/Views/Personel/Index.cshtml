@@ -22,23 +22,26 @@
     </thead>
     @foreach (var m in Model)
     {
-<tr>
+        <tr>
 
-    <td>@m.PersonelID</td>
-    <td>@m.PersonelAd</td>
-    <td>@m.PersonelSoyad</td>
-    <td>@m.PersonelGorsel</td>
-    <td>@m.Departman.DepartmaAd</td>
-    <td>
-        <a href="/Personel/PersonelSil/@m.PersonelID" class="btn btn-danger"><i class="fa fa-trash"></i> Sil</a>
-    </td>
-    <td>
-        <a href="/Personel/PersonelGetir/@m.PersonelID" class="btn btn-warning"><i class="fa fa-undo"></i> Güncelle</a>
-    </td>
-    <td>
-        <a href="/Departman/DepartmanPersonelSatis/@m.PersonelID" class="btn btn-default" style="background-color:lightblue"><i class="fa fa-info-circle"></i> Satış Detayı</a>
-    </td>
-</tr>
+            <td>@m.PersonelID</td>
+            <td>@m.PersonelAd</td>
+            <td>@m.PersonelSoyad</td>
+            <td>
+                <img src="@m.PersonelGorsel" style="width:250px; height:90px; " />
+            </td>
+            <td>@m.Departman.DepartmaAd</td>
+
+            <td>
+                <a href="/Personel/PersonelSil/@m.PersonelID" class="btn btn-danger"><i class="fa fa-trash"></i> Sil</a>
+            </td>
+            <td>
+                <a href="/Personel/PersonelGetir/@m.PersonelID" class="btn btn-warning"><i class="fa fa-undo"></i> Güncelle</a>
+            </td>
+            <td>
+                <a href="/Departman/DepartmanPersonelSatis/@m.PersonelID" class="btn btn-default" style="background-color:lightblue"><i class="fa fa-info-circle"></i> Satış Detayı</a>
+            </td>
+        </tr>
 
     }
 </table>
