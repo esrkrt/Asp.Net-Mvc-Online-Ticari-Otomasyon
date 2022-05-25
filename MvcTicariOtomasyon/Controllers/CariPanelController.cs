@@ -19,7 +19,14 @@ namespace MvcTicariOtomasyon.Controllers
             
             return View(degreler);
         }
-       
+        public ActionResult Siparislerim()
+        {
+            var mail = (string)Session["CariMail"];
+            var id = c.Carilers.Where(x => x.CariMail == mail.ToString()).Select(y => y.Cariid).FirstOrDefault();
+            var degerler = c.SatisHarekets.Where(x => x.CariID == id).ToList();
+
+            return View(degerler);
+        }
 
     }
 }
