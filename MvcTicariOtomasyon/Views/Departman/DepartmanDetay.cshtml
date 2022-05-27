@@ -23,14 +23,16 @@
     </tr>
     @foreach (var m in Model)
     {
-        <tr>
-            <th>@m.PersonelID</th>
-            <th>@m.PersonelAd</th>
-            <th>@m.PersonelSoyad</th>
-            <th>@m.PersonelGorsel </th>
+<tr>
+    <th>@m.PersonelID</th>
+    <th>@m.PersonelAd</th>
+    <th>@m.PersonelSoyad</th>
+    <th>
+        <img src="@m.PersonelGorsel" style="width:250px; height:90px; " />
+    </th>
 
-            <th><a href="/Departman/DepartmanPersonelSatis/@m.PersonelID" class="btn btn-default" style="background-color:coral">Satışlar</a></th>
-        </tr>
+    <th><a href="/Departman/DepartmanPersonelSatis/@m.PersonelID" class="btn btn-default" style="background-color:coral">Satışlar</a></th>
+</tr>
     }
 </table>
 
