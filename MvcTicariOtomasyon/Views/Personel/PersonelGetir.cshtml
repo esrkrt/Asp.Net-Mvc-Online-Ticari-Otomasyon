@@ -8,21 +8,23 @@
 <h2>Personel Güncelleme Sayfası</h2>
 <br />
 
-@using (Html.BeginForm("PersonelGuncelle", "Personel", FormMethod.Post))
+@using (Html.BeginForm("PersonelGuncelle", "Personel", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-    <div class="form-group">
-        @Html.Label("Ad:")
-        @Html.TextBoxFor(x => x.PersonelAd, new { @class = "form-control" })
-        <br />
-        @Html.Label("Soyad:")
-        @Html.TextBoxFor(x => x.PersonelSoyad, new { @class = "form-control" })
+<div class="form-group">
+    @Html.Label("Ad:")
+    @Html.TextBoxFor(x => x.PersonelAd, new { @class = "form-control" })
     <br />
-        @Html.Label("Görsel:")
-        @Html.TextBoxFor(x => x.PersonelGorsel, new { @class = "form-control" })
+    @Html.Label("Soyad:")
+    @Html.TextBoxFor(x => x.PersonelSoyad, new { @class = "form-control" })
     <br />
-        @Html.Label("Departman:")
-        @Html.DropDownListFor(x => x.DepartmanID, (List<SelectListItem>)ViewBag.dprtmn, new { @class = "form-control" })
-        @Html.HiddenFor(x => x.PersonelID)
-    </div>
+    @Html.Label("Görsel:")
+
+    <input type="file" name="PersonelGorsel" />    <br />
+    @*@Html.TextBoxFor(x => x.PersonelGorsel, new { @class = "form-control" })*@
+    <br />
+    @Html.Label("Departman:")
+    @Html.DropDownListFor(x => x.DepartmanID, (List<SelectListItem>)ViewBag.dprtmn, new { @class = "form-control" })
+    @Html.HiddenFor(x => x.PersonelID)
+</div>
     <button class="btn btn-info"><i class="fa fa-undo"></i> Güncelle</button>
 }
