@@ -21,7 +21,7 @@ namespace MvcTicariOtomasyon.Controllers
             return PartialView();
         }
         [HttpPost]
-        public PartialViewResult Partial1(Cariler p )
+        public PartialViewResult Partial1(Cariler p)
         {
             c.Carilers.Add(p);
             //Mail doğrulama Gelicek
@@ -36,12 +36,32 @@ namespace MvcTicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult CariLogin1(Cariler p)
         {
-            var bilgiler = c.Carilers.FirstOrDefault(x => x.CariMail==p.CariMail && x.CariSifre == p.CariSifre);
-            if (bilgiler !=null)
+            var bilgiler = c.Carilers.FirstOrDefault(x => x.CariMail == p.CariMail && x.CariSifre == p.CariSifre);
+            if (bilgiler != null)
             {
                 FormsAuthentication.SetAuthCookie(bilgiler.CariMail, false);
                 Session["CariMail"] = bilgiler.CariMail.ToString();
                 return RedirectToAction("Index", "CariPanel");
+            }
+            else
+            {
+                return RedirectToAction("Index", "Login");
+            }
+        }
+        [HttpGet]
+        public ActionResult AdminLogin()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AdminLogin(Admin p)
+        {
+            var bilgiler = c.Admins.FirstOrDefault(x => x.KullanıcıAd == p.KullanıcıAd && x.Sifre == p.Sifre);
+            if (bilgiler != null)
+            {
+                FormsAuthentication.SetAuthCookie(bilgiler.KullanıcıAd, false);
+                Session["KullanıcıAd"] = bilgiler.KullanıcıAd.ToString();
+                return RedirectToAction("Index", "Kategori");
             }
             else
             {
