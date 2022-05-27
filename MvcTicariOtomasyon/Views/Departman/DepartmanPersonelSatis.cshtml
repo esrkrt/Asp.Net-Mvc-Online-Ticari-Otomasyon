@@ -16,7 +16,6 @@
 
 <table class="table table-hover">
     <tr>
-        <th>Satış ID</th>
         <th>Cari</th>
         <th>Ürün</th>
         <th>Adet</th>
@@ -28,11 +27,10 @@
     @foreach (var m in Model)
         {
             <tr>
-                <td>@m.SatisID</td>
                 <td>@m.Cariler.CariAd @m.Cariler.CariSoyad</td>
                 <td>@m.Urun.UrunAd</td>
                 <td>@m.Adet</td>
-                <td>@m.Fiyat</td>
+                <td>@m.Fiyat ₺</td>
                 <td>@m.ToplamTutar</td>
                 <td>@m.Tarih.ToShortDateString()</td>
            <td><a href="#" class="btn btn-default" style="background-color:dodgerblue">Yazdır</a></td>
