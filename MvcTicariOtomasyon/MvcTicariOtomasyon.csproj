@@ -143,6 +143,7 @@
     <Compile Include="Controllers\DepartmanController.cs" />
     <Compile Include="Controllers\FaturaController.cs" />
     <Compile Include="Controllers\GaleriController.cs" />
+    <Compile Include="Controllers\GrafikController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KargoController.cs" />
     <Compile Include="Controllers\KategoriController.cs" />
@@ -2929,6 +2930,8 @@
     <Content Include="Views\Kargo\YeniKargo.cshtml" />
     <Content Include="Views\Kargo\KargoTakip.cshtml" />
     <Content Include="Views\QR\Index.cshtml" />
+    <Content Include="Views\Grafik\Index.cshtml" />
+    <Content Include="Views\Grafik\Index2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
