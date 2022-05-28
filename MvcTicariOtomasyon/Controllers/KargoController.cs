@@ -10,10 +10,14 @@ namespace MvcTicariOtomasyon.Controllers
     {
         // GET: Kargo
         Context c = new Context();
-        public ActionResult Index()
+        public ActionResult Index(string p)
         {
-            var kargolar = c.KargoDetays.ToList();
-            return View(kargolar);
+            var k = from x in c.KargoDetays select x;
+            if (!string.IsNullOrEmpty(p))
+            {
+                k = k.Where(y => y.TakipKodu.Contains(p));
+            }
+            return View(k.ToList());
         }
         [HttpGet]
         public ActionResult YeniKargo()
