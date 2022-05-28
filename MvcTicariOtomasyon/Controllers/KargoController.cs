@@ -44,5 +44,12 @@ namespace MvcTicariOtomasyon.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult KargoTakip(string id)
+        {
+
+            var degerler= c.KargoTakips.Where(x => x.TakipKodu == id).ToList();
+            
+            return View(degerler);
+        }
     }
 }
