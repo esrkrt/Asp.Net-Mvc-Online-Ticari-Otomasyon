@@ -2939,6 +2939,7 @@
     <Content Include="Views\Grafik\Index4.cshtml" />
     <Content Include="Views\Grafik\Index5.cshtml" />
     <Content Include="Views\CariPanel\IncomingMessages.cshtml" />
+    <Content Include="Views\CariPanel\OutgoingMessages.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
