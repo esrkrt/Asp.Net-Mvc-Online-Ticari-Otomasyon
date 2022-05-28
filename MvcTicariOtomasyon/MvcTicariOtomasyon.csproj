@@ -2938,9 +2938,11 @@
     <Content Include="Views\Grafik\Index3.cshtml" />
     <Content Include="Views\Grafik\Index4.cshtml" />
     <Content Include="Views\Grafik\Index5.cshtml" />
+    <Content Include="Views\CariPanel\IncomingMessages.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Mesaj\" />
     <Folder Include="İmage\" />
   </ItemGroup>
   <ItemGroup>

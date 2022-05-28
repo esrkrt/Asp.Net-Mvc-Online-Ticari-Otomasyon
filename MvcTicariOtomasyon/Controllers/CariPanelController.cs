@@ -27,6 +27,17 @@ namespace MvcTicariOtomasyon.Controllers
 
             return View(degerler);
         }
+        public ActionResult IncomingMessages()
+        {
+            var mail = (string)Session["CariMail"];
+            var messages = c.Mesajlars.Where(x => x.Alici == mail).OrderByDescending(x => x.Id).ToList();
+            var messageCount = c.Mesajlars.Count(x => x.Alici == mail).ToString();
+            ViewBag.messageCount = messageCount;
+            //var OutgoingMessages = c.Mesajlars.Count(message => message.Gonderici == mail).ToString();
+            ////ViewBag.OutgoingMessages = OutgoingMessages;
+            return View(messages);
+        }
+       
 
     }
 }
