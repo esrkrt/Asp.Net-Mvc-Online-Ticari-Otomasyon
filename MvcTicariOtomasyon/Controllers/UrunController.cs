@@ -81,5 +81,30 @@ namespace MvcTicariOtomasyon.Controllers
             var urunler = c.Uruns.ToList();
             return View(urunler);
         }
+        [HttpGet]
+        public ActionResult SatisYap(int id)
+        {
+            List<SelectListItem> personeller = (from x in c.Personels.ToList()
+                                                select new SelectListItem
+                                                {
+                                                    Text = x.PersonelAd + " " + x.PersonelSoyad,
+                                                    Value = x.PersonelID.ToString()
+                                                }).ToList();
+            ViewBag.dgr3 = personeller;
+            var urundeger = c.Uruns.Find(id);
+            ViewBag.dgr1 = urundeger.UrunID;
+            ViewBag.dgr2 = urundeger.SatisFiyat;
+
+            return View();
+        }
+        [HttpPost]
+        public ActionResult SatisYap(SatisHaraket p)
+        {
+
+           p.Tarih = DateTime.Parse(DateTime.Now.ToShortDateString());
+            c.SatisHarekets.Add(p);
+            c.SaveChanges();
+            return RedirectToAction("Index","Satis");
+        }
     }
 }

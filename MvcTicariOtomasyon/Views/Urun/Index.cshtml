@@ -25,6 +25,7 @@
         <th>GÖRSEL</th>
         <th>SİL</th>
         <th>GÜNCELLE</th>
+        <th>SATIŞ YAP</th>
 
     </tr>
     @foreach (var u in Model)
@@ -36,7 +37,7 @@
     <td>@u.AlisFiyat ₺</td>
     <td>@u.SatisFiyat ₺</td>
     <td>@u.Kategori.KategoriAd</td>
-    
+
     <td>
         <img src="@u.UrunGorsel" style="width:200px; height:150px; " />
     </td>
@@ -45,6 +46,9 @@
     </td>
     <td>
         <a href="/Urun/UrunGetir/@u.UrunID" class="btn btn-warning">Güncelle</a>
+    </td>
+    <td>
+        <a href="/Urun/SatisYap/@u.UrunID" class="btn btn-default" style="background-color:aquamarine">Satış Yap</a>
     </td>
 </tr>
     }
