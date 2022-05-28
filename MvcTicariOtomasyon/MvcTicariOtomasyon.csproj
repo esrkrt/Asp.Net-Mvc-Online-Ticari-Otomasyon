@@ -2932,6 +2932,7 @@
     <Content Include="Views\QR\Index.cshtml" />
     <Content Include="Views\Grafik\Index.cshtml" />
     <Content Include="Views\Grafik\Index2.cshtml" />
+    <Content Include="Views\Grafik\Index3.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
