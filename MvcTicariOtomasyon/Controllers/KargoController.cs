@@ -15,5 +15,17 @@ namespace MvcTicariOtomasyon.Controllers
             var kargolar = c.KargoDetays.ToList();
             return View(kargolar);
         }
+        [HttpGet]
+        public ActionResult YeniKargo()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult YeniKargo(KargoDetay d)
+        {
+            c.KargoDetays.Add(d);
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
