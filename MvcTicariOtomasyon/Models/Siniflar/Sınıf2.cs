@@ -5,9 +5,9 @@ using System.Web;
 
 namespace MvcTicariOtomasyon.Models.Siniflar
 {
-    public class Sınıf1
+    public class Sınıf2
     {
-        public String Urunad { get; set; }
-        public int Stok { get; set; }
+        public String Urn { get; set; }
+        public int Stk { get; set; }
     }
 }

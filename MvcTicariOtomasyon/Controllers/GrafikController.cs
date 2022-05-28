@@ -55,36 +55,59 @@ namespace MvcTicariOtomasyon.Controllers
             List<Sınıf1> snf = new List<Sınıf1>();
             snf.Add(new Sınıf1()
             {
-                Uurunad = "Bilgisayar",
+                Urunad = "Bilgisayar",
                 Stok = 120
             });
             snf.Add(new Sınıf1()
             {
-                Uurunad = "Beyaz Eşya",
+                Urunad = "Beyaz Eşya",
                 Stok = 150
             });
             snf.Add(new Sınıf1()
             {
-                Uurunad = "Mobilya",
+                Urunad = "Mobilya",
                 Stok = 70
             });
             snf.Add(new Sınıf1()
             {
-                Uurunad = "Küçük Ev Aletleri",
+                Urunad = "Küçük Ev Aletleri",
                 Stok = 100
             });
             snf.Add(new Sınıf1()
             {
-                Uurunad = "Mobil Cihazlar",
+                Urunad = "Mobil Cihazlar",
                 Stok = 90
             });
             snf.Add(new Sınıf1()
             {
-                Uurunad = "Tablet",
+                Urunad = "Tablet",
                 Stok = 200
             });
             return snf;
         }
-    }
 
+        public ActionResult Index5()
+        {
+            return View();
+        }
+        public ActionResult VisualizeUrunResult2()
+        {
+            return Json(UrunListesi2(), JsonRequestBehavior.AllowGet);
+
+        }
+        public List<Sınıf2> UrunListesi2()
+        {
+            List<Sınıf2> snf = new List<Sınıf2>();
+            using (var context = new Context())
+            {
+                snf = context.Uruns.Select(x => new Sınıf2
+                {
+                    Urn = x.UrunAd,
+                    Stk = x.Stok
+                }).ToList();
+            }
+            return snf;
+
+        }
+    }
 }

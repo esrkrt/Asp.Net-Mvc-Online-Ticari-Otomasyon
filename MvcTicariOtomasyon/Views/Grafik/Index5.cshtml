@@ -1,6 +1,7 @@
-﻿
+﻿@using MvcTicariOtomasyon.Models.Siniflar
+@model List<Sınıf2>
 @{
-    ViewBag.Title = "Index4";
+    ViewBag.Title = "Index5";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
@@ -31,7 +32,7 @@
 
                 contentType: "application/json",
 
-                url: '@Url.Action("VisualizeUrunResult", "Grafik")',
+                url: '@Url.Action("VisualizeUrunResult2", "Grafik")',
 
                 success: function (result) {
 
@@ -69,7 +70,7 @@
 
             $.each(result, function (i, obj) {
 
-                dataArray.push([obj.Urunad, obj.Stok]);
+                dataArray.push([obj.Urn, obj.Stk]);
 
             });
 
@@ -79,25 +80,25 @@
 
             var columnChartOptions = {
 
-                title: "Ürün-Stok Grafiği",
+                title: "Ürün-Stok Grafiği Line",
 
-                width: 1000,
+                width: 1200,
 
-                height: 400,
+                height: 800,
 
-                bar: { groupWidth: "20%" },
+                bar: { groupWidth: "10%" },
 
             };
 
 
 
-            var columnChart = new google.visualization.ColumnChart(document
+            var PieChart = new google.visualization.LineChart(document
 
-                .getElementById('columnchart_div'));
+                .getElementById('Linechart_div'));
 
 
 
-            columnChart.draw(data, columnChartOptions);
+            PieChart.draw(data, columnChartOptions);
 
         }
 
@@ -107,7 +108,7 @@
 
 <body>
 
-    <div id="columnchart_div"></div>
+    <div id="Linechart_div"></div>
 
 
 
