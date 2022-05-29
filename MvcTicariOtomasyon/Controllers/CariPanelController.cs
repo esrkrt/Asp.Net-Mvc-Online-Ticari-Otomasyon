@@ -95,7 +95,13 @@ namespace MvcTicariOtomasyon.Controllers
             return View(cargo.ToList());
           
         }
+        public ActionResult KargoDetay(string id)
+        {
+            Context context = new Context();
+            var result = c.KargoTakips.Where(personel => personel.TakipKodu == id).ToList();
 
+            return View(result);
+        }
 
     }
 }
