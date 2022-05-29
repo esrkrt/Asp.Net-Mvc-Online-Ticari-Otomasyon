@@ -124,6 +124,19 @@ namespace MvcTicariOtomasyon.Controllers
 
             return RedirectToAction("Index", "Login");
         }
+        public PartialViewResult Settings()
+        {
+            var mail = (string)Session["CariMail"];
+            var id = c.Carilers.Where(cari => cari.CariMail == mail).Select(x => x.Cariid).FirstOrDefault();
+            var cariSearch = c.Carilers.Find(id);
+            return PartialView("Settings", cariSearch);
+
+        }
+        public PartialViewResult Announs()
+        {
+            var value = c.Mesajlars.Where(x => x.Gonderici == "admin").ToList();
+            return PartialView(value);
+        }
 
     }
 }
