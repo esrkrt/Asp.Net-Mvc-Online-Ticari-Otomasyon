@@ -137,6 +137,16 @@ namespace MvcTicariOtomasyon.Controllers
             var value = c.Mesajlars.Where(x => x.Gonderici == "admin").ToList();
             return PartialView(value);
         }
-
+        public ActionResult Update(Cariler cari)
+        {
+            var value = c.Carilers.Find(cari.Cariid);
+            value.CariAd= cari.CariAd;
+            value.CariSoyad = cari.CariSoyad;
+            value.CariSifre = cari.CariSifre;
+            value.CariSehir= cari.CariSehir;
+            value.CariMail = cari.CariMail;
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
