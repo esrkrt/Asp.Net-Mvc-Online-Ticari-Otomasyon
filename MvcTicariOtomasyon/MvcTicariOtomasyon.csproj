@@ -168,6 +168,7 @@
     <Compile Include="Models\Siniflar\Cariler.cs" />
     <Compile Include="Models\Siniflar\Class1.cs" />
     <Compile Include="Models\Siniflar\Class3.cs" />
+    <Compile Include="Models\Siniflar\Class4.cs" />
     <Compile Include="Models\Siniflar\Context.cs" />
     <Compile Include="Models\Siniflar\Departman.cs" />
     <Compile Include="Models\Siniflar\Detay.cs" />
@@ -2953,6 +2954,7 @@
     <Content Include="Views\CariPanel\Announs.cshtml" />
     <Content Include="Views\Error\PageError.cshtml" />
     <Content Include="Views\Kategori\Deneme.cshtml" />
+    <Content Include="Views\Fatura\Dinamik.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
