@@ -15,8 +15,12 @@ namespace MvcTicariOtomasyon.Controllers
         public ActionResult Index()
         {
             var mail = (string)Session["CariMail"];
-            var degreler = c.Carilers.FirstOrDefault(x => x.CariMail == mail);
+            var degreler = c.Carilers.Where(x => x.CariMail == mail).ToList();
             ViewBag.m = mail;
+            var mailid = c.Carilers.Where(x => x.CariMail == mail).Select(y => y.Cariid).FirstOrDefault(); ;
+            ViewBag.mid = mailid;
+            var toplamsatis = c.SatisHarekets.Where(x => x.CariID == mailid).Count();
+            ViewBag.tplamsatis = toplamsatis;
             
             return View(degreler);
         }
