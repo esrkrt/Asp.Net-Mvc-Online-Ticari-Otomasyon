@@ -219,6 +219,7 @@
     <Content Include="AdminLTE-3.0.4\dist\css\alt\adminlte.pages.min.css" />
     <Content Include="AdminLTE-3.0.4\dist\css\alt\adminlte.plugins.css" />
     <Content Include="AdminLTE-3.0.4\dist\css\alt\adminlte.plugins.min.css" />
+    <Content Include="AdminLTE-3.0.4\dist\img\2resim.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\AdminLTELogo.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\avatar.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\avatar04.png" />
@@ -234,6 +235,7 @@
     <Content Include="AdminLTE-3.0.4\dist\img\credit\paypal.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\credit\paypal2.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\credit\visa.png" />
+    <Content Include="AdminLTE-3.0.4\dist\img\Customer-Service.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\default-150x150.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\icons.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\photo1.png" />

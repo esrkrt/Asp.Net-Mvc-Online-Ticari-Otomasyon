@@ -15,9 +15,9 @@ namespace MvcTicariOtomasyon.Controllers
         public ActionResult Index()
         {
             var mail = (string)Session["CariMail"];
-            var degreler = c.Carilers.Where(x => x.CariMail == mail).ToList();
+            var degreler = c.Mesajlars.Where(x => x.Alici == mail).ToList();
             ViewBag.m = mail;
-            var mailid = c.Carilers.Where(x => x.CariMail == mail).Select(y => y.Cariid).FirstOrDefault(); ;
+            var mailid = c.Carilers.Where(x => x.CariMail == mail).Select(y => y.Cariid).FirstOrDefault(); 
             ViewBag.mid = mailid;
             var toplamsatis = c.SatisHarekets.Where(x => x.CariID == mailid).Count();
             ViewBag.tplamsatis = toplamsatis;
@@ -27,6 +27,11 @@ namespace MvcTicariOtomasyon.Controllers
             var toplamurunsayisi= c.SatisHarekets.Where(x => x.CariID == mailid).Sum(y => y.Adet);
             ViewBag.toplamurunsayisi = toplamurunsayisi;
 
+            var adsoyad = c.Carilers.Where(cari => cari.CariMail == mail).Select(y => y.CariAd+ " " + y.CariSoyad).FirstOrDefault();
+            ViewBag.adsoyad= adsoyad;
+
+            var sehir = c.Carilers.Where(cari => cari.CariMail == mail).Select(y => y.CariSehir).FirstOrDefault();
+            ViewBag.sehir = sehir;
             return View(degreler);
         }
         public ActionResult Siparislerim()
