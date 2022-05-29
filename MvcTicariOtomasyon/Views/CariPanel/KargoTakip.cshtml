@@ -1,0 +1,62 @@
+﻿@using  MvcTicariOtomasyon.Models.Siniflar
+@model List<KargoDetay>
+@{
+    ViewBag.Title = "KargoTakip";
+    Layout = "~/Views/Shared/_CariLayout.cshtml";
+}
+<style>
+    table {
+        margin-top: 10px;
+    }
+</style>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+
+<br />
+@using (Html.BeginForm("KargoTakip", "CariPanel", FormMethod.Get))
+{
+    <p>
+        Kargo Takip Numarasını Giriniz: @Html.TextBox("p")
+        <input type="submit" value="Ara" />
+    </p>
+}
+<table class="table table-hover table-bordered">
+    <thead>
+        <tr>
+            <th>Personel</th>
+            <th>Alıcı</th>
+            <th>Kargo Takip Kodu</th>
+            <th>Tarih</th>
+            <th>Detay</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.Personel</td>
+                <td>@x.Alici</td>
+                <td>@x.TakipKodu</td>
+                <td>@x.Tarih</td>
+                <td> <a href="~/CariPanel/KargoDetay/@x.TakipKodu" class="btn btn-warning">Detaylar</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+
+
+
+
