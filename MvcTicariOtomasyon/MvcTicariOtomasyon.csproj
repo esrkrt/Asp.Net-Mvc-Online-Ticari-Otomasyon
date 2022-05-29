@@ -175,6 +175,7 @@
     <Compile Include="Models\Siniflar\KargoDetay.cs" />
     <Compile Include="Models\Siniflar\KargoTakip.cs" />
     <Compile Include="Models\Siniflar\Kategori.cs" />
+    <Compile Include="Models\Siniflar\Mesajlar.cs" />
     <Compile Include="Models\Siniflar\Personel.cs" />
     <Compile Include="Models\Siniflar\SatisHaraket.cs" />
     <Compile Include="Models\Siniflar\SinifGrup.cs" />
@@ -2937,9 +2938,15 @@
     <Content Include="Views\Grafik\Index3.cshtml" />
     <Content Include="Views\Grafik\Index4.cshtml" />
     <Content Include="Views\Grafik\Index5.cshtml" />
+    <Content Include="Views\CariPanel\IncomingMessages.cshtml" />
+    <Content Include="Views\CariPanel\OutgoingMessages.cshtml" />
+    <Content Include="Views\CariPanel\MessageDetail.cshtml" />
+    <Content Include="Views\CariPanel\NewMessages.cshtml" />
+    <Content Include="Views\CariPanel\MessageDetail2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Mesaj\" />
     <Folder Include="İmage\" />
   </ItemGroup>
   <ItemGroup>
