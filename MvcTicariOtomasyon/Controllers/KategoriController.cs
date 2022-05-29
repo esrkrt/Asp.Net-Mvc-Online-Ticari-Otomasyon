@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using MvcTicariOtomasyon.Models.Siniflar;
 using PagedList;
 using PagedList.Mvc;
@@ -70,6 +71,13 @@ namespace MvcTicariOtomasyon.Controllers
 
                                }).ToList();
             return Json(urunlistesi, JsonRequestBehavior.AllowGet);
+        }
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+
+            return RedirectToAction("Index", "Login");
         }
     }
     }
