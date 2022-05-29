@@ -395,7 +395,7 @@
 
 
 
-            var degerler = '<tr><td>' + Aciklama + '</td><td>' + BirimFiyat + '</td><td>' + Miktar + '</td><td>' + (parseFloat(BirimFiyat) * parseInt(Miktar)) + '</td><td><a data-itemId="0" href="#" class="deleteItem">Remove</a></td></tr>';
+            var degerler = '<tr><td>' + Aciklama + '</td><td>' + Miktar + '</td><td>' +  BirimFiyat + '</td><td>' + (parseFloat(BirimFiyat) * parseInt(Miktar)) + '</td><td><a data-itemId="0" href="#" class="deleteItem">Remove</a></td></tr>';
 
             detailsTableBody.append(degerler);
 
@@ -447,7 +447,7 @@
 
                 type: 'POST',
 
-                url: "/Siparis/SaveOrder",
+                url: "/Fatura/FaturaKaydet",
 
                 data: data,
 
@@ -487,13 +487,13 @@
 
                 orderArr.push({
 
-                    urun: $(this).find('td:eq(0)').html(),
+                    Aciklama: $(this).find('td:eq(0)').html(),
 
-                    Adet: $(this).find('td:eq(1)').html(),
+                    Miktar: $(this).find('td:eq(1)').html(),
 
-                    Fiyat: $(this).find('td:eq(2)').html(),
+                    BirimFiyat: $(this).find('td:eq(2)').html(),
 
-                    Toplam: $(this).find('td:eq(3)').html()
+                    Tutar: $(this).find('td:eq(3)').html()
 
                 });
 
@@ -505,11 +505,17 @@
 
             var data = JSON.stringify({
 
-                ad: $("#ad").val(),
+                FaturaSeriNo: $("#FaturaSeriNo").val(),
 
-                sehir: $("#sehir").val(),
+                FaturaSıraNo: $("#FaturaSıraNo").val(),
+                Tarih: $("#Tarih").val(),
+                Saat: $("#Saat").val(),
+                VergiDairesi: $("#VergiDairesi").val(),
+                TeslimAlan: $("#TeslimAlan").val(),
+                TeslimEden: $("#TeslimEden").val(),
+                Toplam: $("#Toplam").val(),
 
-                order: orderArr
+                kalemler: orderArr
 
             });
 
