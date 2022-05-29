@@ -33,19 +33,29 @@ namespace MvcTicariOtomasyon.Controllers
             var messages = c.Mesajlars.Where(x => x.Alici == mail).OrderByDescending(x => x.Id).ToList();
             var messageCount = c.Mesajlars.Count(x => x.Alici == mail).ToString();
             ViewBag.messageCount = messageCount;
-            var OutgoingMessages = c.Mesajlars.Count(message => message.Gonderici == mail).ToString();
+            var OutgoingMessages = c.Mesajlars.Count(x => x.Gonderici == mail).ToString();
            ViewBag.OutgoingMessages = OutgoingMessages;
             return View(messages);
         }
         public ActionResult OutgoingMessages()
         {
             var mail = (string)Session["CariMail"];
-            var messages = c.Mesajlars.Where(message => message.Gonderici == mail).OrderByDescending(x => x.Id).ToList();
-            var OutgoingMessages = c.Mesajlars.Count(message => message.Gonderici == mail).ToString();
+            var messages = c.Mesajlars.Where(x => x.Gonderici == mail).OrderByDescending(x => x.Id).ToList();
+            var OutgoingMessages = c.Mesajlars.Count(x => x.Gonderici == mail).ToString();
             ViewBag.OutgoingMessages = OutgoingMessages;
-            var messageCount = c.Mesajlars.Count(message => message.Alici == mail).ToString();
+            var messageCount = c.Mesajlars.Count(x => x.Alici == mail).ToString();
             ViewBag.messageCount = messageCount;
             return View(messages);
+        }
+        public ActionResult MessageDetail(int id)
+        {
+            var value = c.Mesajlars.Where(x => x.Id == id).ToList();
+            var mail = (string)Session["CariMail"];
+            var OutgoingMessages = c.Mesajlars.Count(x => x.Gonderici == mail).ToString();
+            ViewBag.OutgoingMessages = OutgoingMessages;
+            var messageCount = c.Mesajlars.Count(x => x.Alici == mail).ToString();
+            ViewBag.messageCount = messageCount;
+            return View(value);
         }
 
     }
