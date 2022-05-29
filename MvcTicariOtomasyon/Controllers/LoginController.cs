@@ -7,6 +7,7 @@ using System.Web.Security;
 using MvcTicariOtomasyon.Models.Siniflar;
 namespace MvcTicariOtomasyon.Controllers
 {
+    [AllowAnonymous]
     public class LoginController : Controller
     {
         // GET: Login
