@@ -2941,6 +2941,8 @@
     <Content Include="Views\CariPanel\IncomingMessages.cshtml" />
     <Content Include="Views\CariPanel\OutgoingMessages.cshtml" />
     <Content Include="Views\CariPanel\MessageDetail.cshtml" />
+    <Content Include="Views\CariPanel\NewMessages.cshtml" />
+    <Content Include="Views\CariPanel\MessageDetail2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

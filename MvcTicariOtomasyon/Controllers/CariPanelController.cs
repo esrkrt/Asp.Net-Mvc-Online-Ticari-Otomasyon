@@ -57,6 +57,38 @@ namespace MvcTicariOtomasyon.Controllers
             ViewBag.messageCount = messageCount;
             return View(value);
         }
+        public ActionResult MessageDetail2(int id)
+        {
+            var value = c.Mesajlars.Where(x => x.Id == id).ToList();
+            var mail = (string)Session["Email"];
+            var OutgoingMessages = c.Mesajlars.Count(x => x.Gonderici == mail).ToString();
+            ViewBag.OutgoingMessages = OutgoingMessages;
+            var messageCount = c.Mesajlars.Count(x => x.Alici == mail).ToString();
+            ViewBag.messageCount = messageCount;
+            return View(value);
+        }
+
+        [HttpGet]
+        public ActionResult NewMessages()
+        {
+            var mail = (string)Session["CariMail"];
+            var OutgoingMessages = c.Mesajlars.Count(x => x.Gonderici == mail).ToString();
+            ViewBag.OutgoingMessages = OutgoingMessages;
+            var messageCount = c.Mesajlars.Count(x => x.Alici == mail).ToString();
+            ViewBag.messageCount = messageCount;
+            return View();
+        }
+        [HttpPost]
+        public ActionResult NewMessages(Mesajlar messages)
+        {
+            var mail = (string)Session["CariMail"];
+            messages.Tarih = DateTime.Parse(DateTime.Now.ToShortDateString());
+            messages.Gonderici = mail;
+            c.Mesajlars.Add(messages);
+            c.SaveChanges();
+            return View();
+        }
+
 
     }
 }
