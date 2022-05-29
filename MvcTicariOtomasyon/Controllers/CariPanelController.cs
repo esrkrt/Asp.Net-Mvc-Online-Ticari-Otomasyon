@@ -21,7 +21,12 @@ namespace MvcTicariOtomasyon.Controllers
             ViewBag.mid = mailid;
             var toplamsatis = c.SatisHarekets.Where(x => x.CariID == mailid).Count();
             ViewBag.tplamsatis = toplamsatis;
-            
+
+            var toplamtutar = c.SatisHarekets.Where(x => x.CariID == mailid).Sum(y => y.ToplamTutar);
+            ViewBag.toplamtutar = toplamtutar;
+            var toplamurunsayisi= c.SatisHarekets.Where(x => x.CariID == mailid).Sum(y => y.Adet);
+            ViewBag.toplamurunsayisi = toplamurunsayisi;
+
             return View(degreler);
         }
         public ActionResult Siparislerim()
