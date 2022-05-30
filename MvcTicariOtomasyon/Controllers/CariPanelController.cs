@@ -124,7 +124,7 @@ namespace MvcTicariOtomasyon.Controllers
 
             return RedirectToAction("Index", "Login");
         }
-        public PartialViewResult Settings()
+        public PartialViewResult Settings() //ayarlar
         {
             var mail = (string)Session["CariMail"];
             var id = c.Carilers.Where(cari => cari.CariMail == mail).Select(x => x.Cariid).FirstOrDefault();
@@ -132,7 +132,7 @@ namespace MvcTicariOtomasyon.Controllers
             return PartialView("Settings", cariSearch);
 
         }
-        public PartialViewResult Announs()
+        public PartialViewResult Announs()//Duyurular
         {
             var value = c.Mesajlars.Where(x => x.Gonderici == "admin").ToList();
             return PartialView(value);
